@@ -156,7 +156,8 @@ const Projects = () => {
                     key={techIndex}
                     className="bg-gray-800 text-purple-300 px-3 py-1 rounded-full text-sm
                              border border-purple-500/20 hover:border-purple-500/40
-                             transition-colors duration-200"
+                             transition-colors duration-200 sm:rounded-full"
+                    style={{ borderRadius: '9999px' }}
                   >
                     {tech}
                   </span>
@@ -191,7 +192,8 @@ const Projects = () => {
                       key={skillIndex}
                       className="bg-gray-800 text-purple-300 px-3 py-2 rounded-lg text-sm
                                border border-purple-500/20 hover:border-purple-500/40
-                               transition-all duration-200 hover:scale-105"
+                               transition-all duration-200 hover:scale-105 sm:rounded-lg"
+                      style={{ borderRadius: '0.5rem' }}
                     >
                       {skill}
                     </span>

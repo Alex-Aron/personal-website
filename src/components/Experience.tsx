@@ -93,7 +93,7 @@ const Experience = () => {
                   </p>
                 </div>
                 <div className="lg:text-right mt-4 lg:mt-0">
-                  <span className="inline-block bg-purple-600/20 text-purple-300 px-4 py-2 rounded-lg
+                  <span className="inline-block bg-purple-600/20 text-purple-300 px-4 py-2 rounded-lg 
                                  border border-purple-500/30 font-medium">
                     {exp.period}
                   </span>

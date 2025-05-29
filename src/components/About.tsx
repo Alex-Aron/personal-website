@@ -41,7 +41,7 @@ const About = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentLanguageIndex((prev) => (prev + 1) % helloInLanguages.length);
-    }, 2000);
+    }, 1200);
 
     return () => clearInterval(interval);
   }, [helloInLanguages.length]);
