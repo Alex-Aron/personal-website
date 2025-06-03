@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 const About = () => {
   const [currentLanguageIndex, setCurrentLanguageIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
   
   const languages = [
     'Python', 'JavaScript', 'TypeScript', 'Java', 'C#', 'C++', 
@@ -39,12 +41,34 @@ const About = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentLanguageIndex((prev) => (prev + 1) % helloInLanguages.length);
-    }, 1200);
+    const currentWord = helloInLanguages[currentLanguageIndex];
+    
+    const typewriterInterval = setInterval(() => {
+      if (isDeleting) {
+        // Deleting characters
+        setDisplayedText(prev => {
+          if (prev.length === 0) {
+            setIsDeleting(false);
+            setCurrentLanguageIndex(prevIndex => (prevIndex + 1) % helloInLanguages.length);
+            return '';
+          }
+          return prev.slice(0, -1);
+        });
+      } else {
+        // Typing characters
+        setDisplayedText(prev => {
+          if (prev.length === currentWord.length) {
+            // Word complete, wait then start deleting
+            setTimeout(() => setIsDeleting(true), 1500);
+            return prev;
+          }
+          return currentWord.slice(0, prev.length + 1);
+        });
+      }
+    }, isDeleting ? 100 : 150); // Faster deletion than typing
 
-    return () => clearInterval(interval);
-  }, [helloInLanguages.length]);
+    return () => clearInterval(typewriterInterval);
+  }, [currentLanguageIndex, isDeleting, helloInLanguages]);
 
   return (
     <section id="about" className="min-h-screen flex items-center justify-center px-6 pt-20">
@@ -56,7 +80,8 @@ const About = () => {
             <div className="mb-8">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 <span className="text-purple-300 drop-shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-500">
-                  {helloInLanguages[currentLanguageIndex]},
+                  {displayedText}
+                  <span className="animate-pulse">|</span>
                 </span>
                 <br />
                 <span className="text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">

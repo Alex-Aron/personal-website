@@ -4,12 +4,12 @@
     "": {
       "name": "bun-react-template",
       "dependencies": {
-        "bun-react-template": ".",
         "@hookform/resolvers": "^4.1.0",
         "@radix-ui/react-label": "^2.1.2",
         "@radix-ui/react-select": "^2.1.6",
         "@radix-ui/react-slot": "^1.1.2",
         "bun-plugin-tailwind": "^0.0.14",
+        "bun-react-template": ".",
         "class-variance-authority": "^0.7.1",
         "clsx": "^2.1.1",
         "lucide-react": "^0.475.0",
@@ -25,6 +25,9 @@
         "@types/bun": "latest",
         "@types/react": "^19",
         "@types/react-dom": "^19",
+      },
+      "peerDependencies": {
+        "typescript": "^5",
       },
     },
   },
