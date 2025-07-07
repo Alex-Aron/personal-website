@@ -3,6 +3,10 @@ import index from "./index.html";
 
 const server = serve({
   routes: {
+    // Serve static files from public directory
+    "/headshot.jpg": () => new Response(Bun.file("src/images/headshot.jpg")),
+    "/Alex_s.pdf": () => new Response(Bun.file("src/images/Alex_s.pdf")),
+    
     // Serve index.html for all unmatched routes (SPA routing)
     "/*": index,
   },

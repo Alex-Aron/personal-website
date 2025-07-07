@@ -59,7 +59,7 @@ const Projects = () => {
 
   const technicalSkills = {
     "Programming Languages": [
-      "System Verilog", "VHDL", "Rust", "Python", "C/C++", "Java", "HTML", "C#"
+      "System Verilog (beginner)", "VHDL", "Rust", "Python", "C/C++", "Java", "HTML", "C#"
     ],
     "Developer Tools and Frameworks": [
       "Git", "React", "Node.js", "Django", "WASM", "BigQuery", "SQL", "Tailwind", "Docker", "Quartus"
