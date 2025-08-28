@@ -101,8 +101,6 @@ const About = () => {
               </h1>
               
               <div className="text-white-400 text-lg font-medium tracking-wider drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]">
-                SWE Intern @ The Home Depot 
-                <br />
                 Computer Engineering Student @ University of Florida
               </div>
             </div>

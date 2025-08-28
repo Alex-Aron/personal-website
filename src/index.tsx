@@ -6,6 +6,7 @@ const server = serve({
     // Serve static files from public directory
     "/headshot.jpg": () => new Response(Bun.file("public/headshot.jpg")),
     "/Alex_s.pdf": () => new Response(Bun.file("public/Alex_s.pdf")),
+    "/scns.png": () => new Response(Bun.file("public/scns.png")),
     
     // Serve index.html for all unmatched routes (SPA routing)
     "/*": index,

@@ -7,10 +7,23 @@ interface ExperienceItem {
   period: string;
   description: string[];
   technologies?: string[];
+  image?: string;
 }
 
 const Experience = () => {
   const experiences: ExperienceItem[] = [
+    {
+      title: "Florida SCNS Description Revision",
+      company: "University of Florida",
+      location: "Gainesville, FL",
+      period: "July 2025 – Present",
+      description: [
+        "Revising course descriptions within the Florida Statewide Course Numbering System to better align with ABET accreditation standards and state university requirements",
+        "Analyzing and rewriting course details in computer science courses to ensure consistency with established course numbering frameworks like mathematics",
+      ],
+      technologies: ["Research", "Academic Standards", "Course Accreditation", "SCNS"],
+      image: "/scns.png"
+    },
     {
       title: "Teaching Assistant - Data Structures and Algorithms",
       company: "University of Florida",
@@ -78,6 +91,20 @@ const Experience = () => {
                        backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.2)]
                        hover:shadow-[0_0_40px_rgba(168,85,247,0.3)] transition-all duration-300"
             >
+              {/* Project Image */}
+              {exp.image && (
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={exp.image} 
+                    alt={`${exp.title} project`}
+                    className="max-w-full h-auto rounded-lg border-2 border-purple-500/30 
+                             shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)]
+                             transition-all duration-300 transform hover:scale-105"
+                    style={{ maxHeight: '300px' }}
+                  />
+                </div>
+              )}
+              
               <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
                 <div className="flex-1">
                   <h3 className="text-2xl font-bold text-white mb-2 
